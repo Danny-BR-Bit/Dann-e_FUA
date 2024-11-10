@@ -1,4 +1,1 @@
-
-
-def promedio_notas(cantidad_notas):
-    
+#Aqui van las funciones que usemos para esto :D
