@@ -1,5 +1,5 @@
-#Idea principal: una calculadora de notas que permita calcular el promedio de n cantidad de notas.
-#Ideas secundarias: que se pueda elegir entre un promedio de notas que solo reciba notas cuantitativas y otro que solo reciba notas cualitativas; 
+#J: Idea principal: una calculadora de notas que permita calcular el promedio de n cantidad de notas.
+#J: Ideas secundarias: que se pueda elegir entre un promedio de notas que solo reciba notas cuantitativas y otro que solo reciba notas cualitativas; 
 try:
 
     from functions import promedio_notas_cuantitativas
@@ -12,7 +12,7 @@ try:
            cantidad_notas = int(input("Ingrese la cantidad de notas que va a promediar: "))
            print("\n"+f"Su promedio cuantitativo es de: {promedio_notas_cuantitativas(cantidad_notas)}"+"\n")
         elif decision == 2:
-           print("Hola Mundo") #Aqui toca programar la segunda opcion que es la cualitativa, pero mientras hacemos eso puse este hola mundo para que el codigo no diera error :)
+           print("Hola Mundo") #J: Aqui toca programar la segunda opcion que es la cualitativa, pero mientras hacemos eso puse este hola mundo para que el codigo no diera error :)
         elif decision == 3:
            print("\n"+"¡Hasta luego!"+"\n")
            break
