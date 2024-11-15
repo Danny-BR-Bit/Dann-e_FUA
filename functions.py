@@ -4,6 +4,7 @@
 def promedio_notas_cuantitativas_todas(cantidad_notas): #J: Calcula el promedio de notas cuando se tienen todas las notas
     cont = 1
     prom = []
+    #s = 0
     while cont <= cantidad_notas:
         print("")
         nota = float(input(f"Ingrese su nota {cont}: "))
@@ -35,4 +36,66 @@ def promedio_notas_cuantitativas_faltan(cantidad_notas,notas_que_faltan):
         return "mayor a 5.0, lo cual es imposible de obtener, ya que el maximo que puedes sacar en cada nota es 5.0"
     else:
         return f"de {minimo_cada_nota}"
-
+    
+def promedio_notas_cuantitativas_todas(cantidad_notas_cualitativas): #D: Aqui se calcula el promedio de notas cualitativas, arrojando un resultado cualitativo
+    cont = 1
+    Cant_not = 0 #Cantidad de notas
+    Sobresaliente = 0
+    Muy_Bueno = 0
+    Bueno = 0
+    Aceptable = 0
+    Regular = 0 
+    No_Acreditable = 0
+    while cont <= cantidad_notas_cualitativas:
+        print("")
+        print(f"Por favor, ingrese su nota:\n(S) Sobresaliente\n(MB) Muy Bueno\n(B) Bueno\n(A) Aceptable\n(R) Regular\n(NA) No Acreditable")
+        nota = str(input(f"Nota #{cont}: ")).upper
+        if nota == "S":
+            Sobresaliente += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == "MB":
+            Muy_Bueno += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == "B":
+            Bueno += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == "A":
+            Aceptable += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == "R":
+            Regular += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == "NA":
+            No_Acreditable += 1
+            Cant_not += 1
+            cont += 1
+        else:
+            print("La nota ingresada no es valida")
+    S = Sobresaliente * 5
+    MB = Muy_Bueno * 4.5
+    B = Bueno * 4
+    A = Aceptable * 3.5
+    R = Regular * 3
+    NA = No_Acreditable * 1
+    Prom = S + MB + B + A + R + NA
+    num_prom = round(Prom/Cant_not,1)
+    if 0 <= num_prom < 3:
+        promedio = "No Acreditable"
+    elif 3 <= num_prom < 3.5:
+        promedio = "Regular"
+    elif 3.5 <= num_prom < 4:
+        promedio = "Aceptable"
+    elif 4 <= num_prom < 4.5:
+        promedio = "Bueno"
+    elif 4.5 <= num_prom < 5:
+        promedio = "Muy Bueno"
+    elif num_prom == 5:
+        promedio = "Sobresaliente"
+    else:
+        print(f"Su promedio se encuentra fuera de los limites del programa y la universidad")
+    return promedio
