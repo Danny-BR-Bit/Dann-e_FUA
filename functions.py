@@ -37,7 +37,7 @@ def promedio_notas_cuantitativas_faltan(cantidad_notas,notas_que_faltan):
     else:
         return f"de {minimo_cada_nota}"
     
-def promedio_notas_cuantitativas_todas(cantidad_notas_cualitativas): #D: Aqui se calcula el promedio de notas cualitativas, arrojando un resultado cualitativo
+def promedio_notas_cualitativas_todas(cantidad_notas_cualitativas): #D: Aqui se calcula el promedio de notas cualitativas, arrojando un resultado cualitativo
     cont = 1
     Cant_not = 0 #Cantidad de notas
     Sobresaliente = 0
