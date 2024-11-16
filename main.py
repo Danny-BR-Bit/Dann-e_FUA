@@ -4,6 +4,7 @@ try:
 
     from functions import promedio_notas_cuantitativas_todas
     from functions import promedio_notas_cuantitativas_faltan
+    from functions import promedio_notas_cualitativas_todas
 
     print("\n"+">"*17+" ¡Bienvenido a Dann-E, tu calculadora de notas de confianza! "+"<"*17+"\n")
     while True:
@@ -35,8 +36,25 @@ try:
               break
            else:
               print("\n"+"La decision debe ser: 1, 2 o 3."+"\n")
+
+
         elif decision == 2: #J: Calculo de promedio de notas cualitativas.
-           print("Hola Mundo") #J: Aqui toca programar la segunda opcion que es la cualitativa, pero mientras hacemos eso puse este hola mundo para que el codigo no diera error :)
+           print("\n"+"¿Que desea hacer?"+"\n"+"\n"+"1. Promedio de notas."+"\n"+"2. Calculo de notas necesarias para pasar."+"\n"+"3. Salir"+"\n")
+           decision = int(input("Ingrese su decision: ")) 
+           if decision == 1:
+              cantidad_notas_cualitativas = int(input("Ingrese la cantidad de notas que va a promediar: "))
+              if 1 <= cantidad_notas_cualitativas <= 30: #J: Defini un maximo de 30 notas para promediar, aunque esto puede cambiar
+                 print("\n"+f"Su promedio cuantitativo es de: {promedio_notas_cualitativas_todas(cantidad_notas_cualitativas)}"+"\n")
+              else:
+                 print("\n"+f"¿{cantidad_notas} notas? No creo que pueda hacer eso"+"\n")
+           elif decision == 2:
+              print("Hola mundo") #D: todavia no hay codigo 
+           elif decision == 3:
+              print("\n"+"¡Hasta luego!"+"\n")
+              break
+           else:
+              print("\n"+"La decision debe ser: 1, 2 o 3."+"\n")
+           
         elif decision == 3: #J: Salir
            print("\n"+"¡Hasta luego!"+"\n")
            break

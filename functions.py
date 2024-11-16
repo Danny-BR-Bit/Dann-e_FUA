@@ -49,7 +49,7 @@ def promedio_notas_cualitativas_todas(cantidad_notas_cualitativas): #D: Aqui se 
     while cont <= cantidad_notas_cualitativas:
         print("")
         print(f"Por favor, ingrese su nota:\n(S) Sobresaliente\n(MB) Muy Bueno\n(B) Bueno\n(A) Aceptable\n(R) Regular\n(NA) No Acreditable")
-        nota = str(input(f"Nota #{cont}: ")).upper
+        nota = str(input(f"Nota #{cont}: ").upper)
         if nota == "S":
             Sobresaliente += 1
             Cant_not += 1
