@@ -13,6 +13,7 @@ try:
         if decision == 1: #J: Calculo de promedio de notas cuantitativas.
            print("\n"+"¿Que desea hacer?"+"\n"+"\n"+"1. Promedio de notas."+"\n"+"2. Calculo de notas necesarias para pasar."+"\n"+"3. Salir"+"\n")
            decision = int(input("Ingrese su decision: ")) 
+           print("")
            if decision == 1:
               cantidad_notas = int(input("Ingrese la cantidad de notas que va a promediar: "))
               if 1 <= cantidad_notas <= 30: #J: Defini un maximo de 30 notas para promediar, aunque esto puede cambiar
@@ -20,7 +21,6 @@ try:
               else:
                  print("\n"+f"¿{cantidad_notas} notas? No creo que pueda hacer eso"+"\n")
            elif decision == 2:
-              print("")
               cantidad_notas = int(input("Ingrese la cantidad total de notas que va a promediar: "))
               if 1 <= cantidad_notas <= 30: #J: Defini un maximo de 30 notas para promediar, aunque esto puede cambiar
                  print("")
@@ -44,11 +44,11 @@ try:
            if decision == 1:
               cantidad_notas_cualitativas = int(input("Ingrese la cantidad de notas que va a promediar: "))
               if 1 <= cantidad_notas_cualitativas <= 30: #J: Defini un maximo de 30 notas para promediar, aunque esto puede cambiar
-                 print("\n"+f"Su promedio cuantitativo es de: {promedio_notas_cualitativas_todas(cantidad_notas_cualitativas)}"+"\n")
+                 print("\n"+f"Su promedio cualitativo es de: {promedio_notas_cualitativas_todas(cantidad_notas_cualitativas)}"+"\n")
               else:
                  print("\n"+f"¿{cantidad_notas} notas? No creo que pueda hacer eso"+"\n")
            elif decision == 2:
-              print("Hola mundo") #D: todavia no hay codigo 
+              print("\n"+"Todavia no hay nada aca"+"\n"+"Vuelve pronto"+"\n") #D: todavia no hay codigo 
            elif decision == 3:
               print("\n"+"¡Hasta luego!"+"\n")
               break

@@ -5,8 +5,8 @@ def promedio_notas_cuantitativas_todas(cantidad_notas): #J: Calcula el promedio 
     cont = 1
     prom = []
     #s = 0
+    print("\n"+"La nota debe estar entre 0.0 y 5.0"+"\n")
     while cont <= cantidad_notas:
-        print("")
         nota = float(input(f"Ingrese su nota {cont}: "))
         if 0 <= nota <= 5:  #J: Aqui confirma que la nota este entre 0 y 5, y si no lo esta dice que no esta y no cuenta el valor ingresado dentro de las notas
             prom.append(nota)
@@ -21,6 +21,7 @@ def promedio_notas_cuantitativas_faltan(cantidad_notas,notas_que_faltan):
     cont = 1
     prom = []
     cantidad_notas_total = cantidad_notas-notas_que_faltan
+    print("\n"+"La nota debe estar entre 0.0 y 5.0"+"\n")
     while cont <= cantidad_notas_total:
         print("")
         nota = float(input(f"Ingrese su nota {cont}: "))
@@ -48,29 +49,29 @@ def promedio_notas_cualitativas_todas(cantidad_notas_cualitativas): #D: Aqui se 
     No_Acreditable = 0
     while cont <= cantidad_notas_cualitativas:
         print("")
-        print(f"Por favor, ingrese su nota:\n(S) Sobresaliente\n(MB) Muy Bueno\n(B) Bueno\n(A) Aceptable\n(R) Regular\n(NA) No Acreditable")
-        nota = str(input(f"Nota #{cont}: ").upper)
-        if nota == "S":
+        print("\nPor favor, ingrese su nota:\n \n(1) Sobresaliente\n(2) Muy Bueno\n(3) Bueno\n(4) Aceptable\n(5) Regular\n(6) No Acreditable\n")
+        nota = int(input(f"Nota #{cont}: "))
+        if nota == 1:
             Sobresaliente += 1
             Cant_not += 1
             cont += 1
-        elif nota == "MB":
+        elif nota == 2:
             Muy_Bueno += 1
             Cant_not += 1
             cont += 1
-        elif nota == "B":
+        elif nota == 3:
             Bueno += 1
             Cant_not += 1
             cont += 1
-        elif nota == "A":
+        elif nota == 4:
             Aceptable += 1
             Cant_not += 1
             cont += 1
-        elif nota == "R":
+        elif nota == 5:
             Regular += 1
             Cant_not += 1
             cont += 1
-        elif nota == "NA":
+        elif nota == 6:
             No_Acreditable += 1
             Cant_not += 1
             cont += 1
