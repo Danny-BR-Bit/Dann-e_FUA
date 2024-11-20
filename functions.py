@@ -7,7 +7,7 @@ def promedio_notas_cuantitativas_todas(cantidad_notas): #J: Calcula el promedio 
     #s = 0
     print("\n"+"La nota debe estar entre 0.0 y 5.0"+"\n")
     while cont <= cantidad_notas:
-        nota = float(input(f"Ingrese su nota {cont}: "))
+        nota = float(input(f"Nota #{cont}: ")) #D: Introduje un parche para una mejor visualizacion
         if 0 <= nota <= 5:  #J: Aqui confirma que la nota este entre 0 y 5, y si no lo esta dice que no esta y no cuenta el valor ingresado dentro de las notas
             prom.append(nota)
             cont += 1
@@ -24,7 +24,7 @@ def promedio_notas_cuantitativas_faltan(cantidad_notas,notas_que_faltan):
     print("\n"+"La nota debe estar entre 0.0 y 5.0"+"\n")
     while cont <= cantidad_notas_total:
         print("")
-        nota = float(input(f"Ingrese su nota {cont}: "))
+        nota = float(input(f"Nota #{cont}: ")) #D: Lo mismo aqui, parche de visualizacion
         if 0 <= nota <= 5:  #J: Aqui confirma que la nota este entre 0 y 5, y si no lo esta dice que no esta y no cuenta el valor ingresado dentro de las notas
             prom.append(nota)
             cont += 1
