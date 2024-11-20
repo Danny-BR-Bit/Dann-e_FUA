@@ -100,3 +100,74 @@ def promedio_notas_cualitativas_todas(cantidad_notas_cualitativas): #D: Aqui se 
     else:
         print(f"Su promedio se encuentra fuera de los limites del programa y la universidad")
     return promedio
+
+def promedio_notas_cuanlitativas_faltan(cantidad_notas_cual,notas_que_faltan_cual): #D:Test notas cualitativas
+    cont = 1
+    Cant_not = 0 #Cantidad de notas
+    Sobresaliente = 0
+    Muy_Bueno = 0
+    Bueno = 0
+    Aceptable = 0
+    Regular = 0 
+    No_Acreditable = 0
+
+    cantidad_notas_total = cantidad_notas_cual-notas_que_faltan_cual
+    print("\nPor favor, ingrese su nota:\n \n(1) Sobresaliente\n(2) Muy Bueno\n(3) Bueno\n(4) Aceptable\n(5) Regular\n(6) No Acreditable\n")
+    while cont <= cantidad_notas_total:
+        print("")
+        print("\nPor favor, ingrese su nota:\n \n(1) Sobresaliente\n(2) Muy Bueno\n(3) Bueno\n(4) Aceptable\n(5) Regular\n(6) No Acreditable\n")
+        nota = int(input(f"Nota #{cont}: "))
+        if nota == 1:
+            Sobresaliente += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == 2:
+            Muy_Bueno += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == 3:
+            Bueno += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == 4:
+            Aceptable += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == 5:
+            Regular += 1
+            Cant_not += 1
+            cont += 1
+        elif nota == 6:
+            No_Acreditable += 1
+            Cant_not += 1
+            cont += 1
+        else:
+            print("La nota ingresada no es valida")
+        print("")
+    S = Sobresaliente * 5
+    MB = Muy_Bueno * 4.5
+    B = Bueno * 4
+    A = Aceptable * 3.5
+    R = Regular * 3
+    NA = No_Acreditable * 1
+    Prom = S + MB + B + A + R + NA
+    num_prom = round(Prom/Cant_not,1)
+
+    minimo_cada_nota_cual = round((((3-num_prom)*cantidad_notas_cual)/notas_que_faltan_cual)+0.1,1)
+    
+    if 0 <= minimo_cada_nota_cual < 3:
+        mcnc = "No Acreditable"
+    elif 3 <= minimo_cada_nota_cual < 3.5:
+        mcnc = "Regular"
+    elif 3.5 <= minimo_cada_nota_cual < 4:
+        mcnc = "Aceptable"
+    elif 4 <= minimo_cada_nota_cual < 4.5:
+        mcnc = "Bueno"
+    elif 4.5 <= minimo_cada_nota_cual < 5:
+        mcnc = "Muy Bueno"
+    elif minimo_cada_nota_cual == 5:
+        mcnc = "Sobresaliente"
+    elif minimo_cada_nota_cual > 5:
+        return "mayor a sobresaliente, lo cual es imposible de obtener, ya que el maximo que puedes sacar en cada nota es sobresaliente"
+    else:
+        return f"de {mcnc}"
