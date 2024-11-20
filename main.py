@@ -5,7 +5,7 @@ try:
     from functions import promedio_notas_cuantitativas_todas
     from functions import promedio_notas_cuantitativas_faltan
     from functions import promedio_notas_cualitativas_todas
-    from functions import promedio_notas_cuanlitativas_faltan
+    from functions import promedio_notas_cuanlitativas_faltan #D: Querido Jhonatan, por favor, implementa la funcion en el codigo, quedo 100% hecho :D
 
     print("\n"+">"*17+" ¡Bienvenido a Dann-E, tu calculadora de notas de confianza! "+"<"*17+"\n")
     while True:
