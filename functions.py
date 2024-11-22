@@ -156,17 +156,60 @@ def promedio_notas_cualitativas_faltan(cantidad_notas_cual,notas_que_faltan_cual
     
     if 0 <= minimo_cada_nota_cual < 3:
         mcnc = "No Acreditable"
+        return f"de {mcnc}"
     elif 3 <= minimo_cada_nota_cual < 3.5:
         mcnc = "Regular"
+        return f"de {mcnc}"
     elif 3.5 <= minimo_cada_nota_cual < 4:
         mcnc = "Aceptable"
+        return f"de {mcnc}"
     elif 4 <= minimo_cada_nota_cual < 4.5:
         mcnc = "Bueno"
+        return f"de {mcnc}"
     elif 4.5 <= minimo_cada_nota_cual < 5:
         mcnc = "Muy Bueno"
+        return f"de {mcnc}"
     elif minimo_cada_nota_cual == 5:
         mcnc = "Sobresaliente"
-    elif minimo_cada_nota_cual > 5:
-        return "mayor a sobresaliente, lo cual es imposible de obtener, ya que el maximo que puedes sacar en cada nota es sobresaliente"
-    else:
         return f"de {mcnc}"
+    else:
+        return "mayor a sobresaliente, lo cual es imposible de obtener, ya que el maximo que puedes sacar en cada nota es sobresaliente"
+
+def conversor_a_cuantitativo(decision):
+    
+    if decision == 1:
+        cualitativa = "'Sobresaliente' se encuentra entre el siguiente rango: 4.8 a 5.0"
+    if decision == 2:
+        cualitativa = "'Muy Bueno' se encuentra entre el siguiente rango: 4.5 a 4.7"
+    if decision == 3:
+        cualitativa = "'Bueno' se encuentra entre el siguiente rango: 4.0 a 4.4"
+    if decision == 4:
+        cualitativa = "'Aceptable' se encuentra entre el siguiente rango: 3.5 a 3.9"
+    if decision == 5:
+        cualitativa = "'Regular' se encuentra entre el siguiente rango: 3.0 a 3.4"
+    if decision == 6:
+        cualitativa = "'No Acreditable' se encuentra entre el siguiente rango: 0.0 a 2.9"
+    return cualitativa
+
+def conversor_a_cualitativo(nota): #J: Aqui tome parte de un codigo que usted habia hecho para ahorrar tiempo, por eso las variables tienen un nombre similar
+    
+    if 0 <= nota < 3:
+        mcnc = "No Acreditable"
+        return f"de {mcnc}"
+    elif 3 <= nota < 3.5:
+        mcnc = "Regular"
+        return f"de {mcnc}"
+    elif 3.5 <= nota < 4:
+        mcnc = "Aceptable"
+        return f"de {mcnc}"
+    elif 4 <= nota < 4.5:
+        mcnc = "Bueno"
+        return f"de {mcnc}"
+    elif 4.5 <= nota < 5:
+        mcnc = "Muy Bueno"
+        return f"de {mcnc}"
+    elif nota == 5:
+        mcnc = "Sobresaliente"
+        return f"de {mcnc}"
+    else:
+        return "mayor a sobresaliente, lo cual es imposible de obtener, ya que el maximo que puedes sacar en cada nota es sobresaliente"
