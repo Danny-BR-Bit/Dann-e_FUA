@@ -101,7 +101,7 @@ def promedio_notas_cualitativas_todas(cantidad_notas_cualitativas): #D: Aqui se 
         print(f"Su promedio se encuentra fuera de los limites del programa y la universidad")
     return promedio
 
-def promedio_notas_cuanlitativas_faltan(cantidad_notas_cual,notas_que_faltan_cual): #D:Test notas cualitativas
+def promedio_notas_cualitativas_faltan(cantidad_notas_cual,notas_que_faltan_cual): #D:Test notas cualitativas
     cont = 1
     Cant_not = 0 #Cantidad de notas
     Sobresaliente = 0
@@ -112,7 +112,6 @@ def promedio_notas_cuanlitativas_faltan(cantidad_notas_cual,notas_que_faltan_cua
     No_Acreditable = 0
 
     cantidad_notas_total = cantidad_notas_cual-notas_que_faltan_cual
-    print("\nPor favor, ingrese su nota:\n \n(1) Sobresaliente\n(2) Muy Bueno\n(3) Bueno\n(4) Aceptable\n(5) Regular\n(6) No Acreditable\n")
     while cont <= cantidad_notas_total:
         print("")
         print("\nPor favor, ingrese su nota:\n \n(1) Sobresaliente\n(2) Muy Bueno\n(3) Bueno\n(4) Aceptable\n(5) Regular\n(6) No Acreditable\n")
@@ -151,7 +150,7 @@ def promedio_notas_cuanlitativas_faltan(cantidad_notas_cual,notas_que_faltan_cua
     R = Regular * 3
     NA = No_Acreditable * 1
     Prom = S + MB + B + A + R + NA
-    num_prom = round(Prom/Cant_not,1)
+    num_prom = round(Prom/cantidad_notas_cual,1)
 
     minimo_cada_nota_cual = round((((3-num_prom)*cantidad_notas_cual)/notas_que_faltan_cual)+0.1,1)
     

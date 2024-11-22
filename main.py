@@ -5,7 +5,7 @@ try:
     from functions import promedio_notas_cuantitativas_todas
     from functions import promedio_notas_cuantitativas_faltan
     from functions import promedio_notas_cualitativas_todas
-    from functions import promedio_notas_cuanlitativas_faltan #D: Querido Jhonatan, por favor, implementa la funcion en el codigo, quedo 100% hecho :D
+    from functions import promedio_notas_cualitativas_faltan #D: Querido Jhonatan, por favor, implementa la funcion en el codigo, quedo 100% hecho :D
 
     print("\n"+">"*17+" ¡Bienvenido a Dann-E, tu calculadora de notas de confianza! "+"<"*17+"\n")
     while True:
@@ -26,8 +26,10 @@ try:
               if 1 <= cantidad_notas <= 30: #J: Defini un maximo de 30 notas para promediar, aunque esto puede cambiar
                  print("")
                  notas_que_faltan = int(input("Ingrese las notas que no tiene de la cantitad de notas que ingreso: "))
-                 if notas_que_faltan <= cantidad_notas:
+                 if 0 < notas_que_faltan <= cantidad_notas:
                      print("\n"+f"El valor que debe tener cada una de la(s) {notas_que_faltan} nota(s) que te falta(n) es {promedio_notas_cuantitativas_faltan(cantidad_notas,notas_que_faltan)} para pasar con 3.0"+"\n")
+                 elif notas_que_faltan == 0:
+                    print("\n"+f"Su promedio cuantitativo es de: {promedio_notas_cuantitativas_todas(cantidad_notas)}"+"\n")
                  else:
                     print("\n"+"La cantidad de notas que faltan no puede ser mayor a la cantidad de notas que desea calcular"+"\n")
               else:
@@ -42,6 +44,7 @@ try:
         elif decision == 2: #J: Calculo de promedio de notas cualitativas.
            print("\n"+"¿Que desea hacer?"+"\n"+"\n"+"1. Promedio de notas."+"\n"+"2. Calculo de notas necesarias para pasar."+"\n"+"3. Salir"+"\n")
            decision = int(input("Ingrese su decision: ")) 
+           print("")
            if decision == 1:
               cantidad_notas_cualitativas = int(input("Ingrese la cantidad de notas que va a promediar: "))
               if 1 <= cantidad_notas_cualitativas <= 30: #J: Defini un maximo de 30 notas para promediar, aunque esto puede cambiar
@@ -49,7 +52,18 @@ try:
               else:
                  print("\n"+f"¿{cantidad_notas} notas? No creo que pueda hacer eso"+"\n")
            elif decision == 2:
-              print("\n"+"Todavia no hay nada aca"+"\n"+"Vuelve pronto"+"\n") #D: todavia no hay codigo 
+              cantidad_notas = int(input("Ingrese la cantidad total de notas que va a promediar: "))
+              if 1 <= cantidad_notas <= 30: #J: Defini un maximo de 30 notas para promediar, aunque esto puede cambiar
+                 print("")
+                 notas_que_faltan = int(input("Ingrese las notas que no tiene de la cantitad de notas que ingreso: "))
+                 if 0 < notas_que_faltan <= cantidad_notas:
+                     print("\n"+f"El valor que debe tener cada una de la(s) {notas_que_faltan} nota(s) que te falta(n) es {promedio_notas_cualitativas_faltan(cantidad_notas,notas_que_faltan)} para pasar con 'Regular'"+"\n")
+                 elif notas_que_faltan == 0:
+                     print("\n"+f"Su promedio cualitativo es de: {promedio_notas_cualitativas_todas(cantidad_notas)}"+"\n")
+                 else:
+                    print("\n"+"La cantidad de notas que faltan no puede ser mayor a la cantidad de notas que desea calcular"+"\n")
+              else:
+                 print("\n"+f"¿{cantidad_notas} notas? No creo que pueda hacer eso"+"\n")  
            elif decision == 3:
               print("\n"+"¡Hasta luego!"+"\n")
               break
